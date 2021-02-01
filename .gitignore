@@ -1,0 +1,3 @@
+shots/*
+!shots/.STAMPS_GOES_HERE
+node_modules/

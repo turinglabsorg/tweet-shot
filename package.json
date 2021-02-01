@@ -1,0 +1,16 @@
+{
+  "name": "tweetshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "turinglabs",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "puppeteer": "^5.5.0",
+    "sharp": "^0.27.1"
+  }
+}
