@@ -1,3 +1,4 @@
 shots/*
 !shots/.STAMPS_GOES_HERE
+!shots/turinglabsorg
 node_modules/

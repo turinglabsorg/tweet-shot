@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const puppeteer = require("puppeteer");
 const sharp = require('sharp');
 const fs = require('fs');
@@ -8,7 +10,7 @@ const run = async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     console.log('Setting up viewport...');
-    
+
     await page.setViewport({
       width: 800,
       height: 1200
@@ -16,12 +18,16 @@ const run = async () => {
 
     await page.goto(argv.t);
     const split = argv.t.split('/');
-    const filename = './shots/' + split[3] + '/' + split[5] + '.png';
+    const filename = process.cwd() + '/shots/' + split[3] + '/' + split[5] + '.png';
 
-    if (!fs.existsSync('./shots/' + split[3])) {
-      fs.mkdirSync('./shots/' + split[3]);
+    if (!fs.existsSync(process.cwd() + '/shots/')) {
+      fs.mkdirSync(process.cwd() + '/shots/');
     }
-    
+
+    if (!fs.existsSync(process.cwd() + '/shots/' + split[3])) {
+      fs.mkdirSync(process.cwd() + '/shots/' + split[3]);
+    }
+
     console.log('Loading tweet #' + split[5] + ' from @' + split[3] + '...');
 
     setTimeout(async function () {
